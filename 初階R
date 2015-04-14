@@ -1,0 +1,37 @@
+Enter file contents here
+1 + 1 
+#R的四則運算
+"Arr, matey!"
+#R的文字方塊
+6 * 7
+#R的四則運算
+3 < 4
+#R的邏輯
+2 + 2 == 5
+#R的四則運算加上邏輯推理
+T == TRUE
+#R的簡寫代號
+x <- 42
+#X在R等於42
+x / 2
+#X在R等於42,然後四則運算
+x <- "Arr, matey!"
+#把文字方塊帶入X
+x
+#打X,直接顯示文字方塊
+x <- TRUE
+#把X帶入TRUE
+sum(1, 3, 5)
+#相加特定數字的答案 
+rep("Yo ho!", times = 3)
+#使命令重複三次
+sqrt(16)
+#使數字開根號
+help(sum)
+#呼叫小視窗
+list.files()
+#把檔案資料叫出來
+source("bottle1.R.txt")
+#資料呈現
+source("bottle2.R.txt")
+#資料呈現

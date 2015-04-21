@@ -1,0 +1,66 @@
+5:9
+seq(5, 9)
+#5¨ì9
+seq(5, 9, 0.5)
+#5¨ì9¨C¹j0.5
+9:5
+#9¨ì5
+sentence <- c('walk', 'the', 'plank')
+#³]©w³æ¦r
+sentence[1]
+#©R¥O¥X²Ä¤@­Ó
+sentence[3] <- "dog"
+#³Ð·s³æ¦r
+sentence[4] <- 'to'
+#³Ð·s³æ¦r
+sentence[c(1, 3)]
+#²Õ¦X³æ¦r
+sentence[2:4]
+#²Õ¦X³æ¦r
+sentence[5:7] <- c('the', 'poop', 'deck')
+#²Õ¦X³æ¦r
+sentence[6]
+#©R¥O³æ¦r
+ranks <- 1:3
+ranks
+ranks["third"] <- 4
+vesselsSunk <- c(4, 5, 1)
+names(vesselsSunk) <- c("England", "France", "Norway")
+barplot(vesselsSunk)
+barplot(1:100)
+a <- c(1, 2, 3)
+a + 1
+#+
+a / 2
+#/
+a * 2
+#*
+b <- c(4, 5, 6)
+#<
+a + b
+#<=
+a - b
+#>=
+a == c(1, 99, 3)
+#==
+a < c(1, 99, 3)
+sin(a)
+#sin()
+sqrt(a)
+#sqrt()
+x <- seq(1, 20, 0.1)
+y <- sin(x)
+plot(x, y)
+values <- -10:10
+absolutes <- abs(values)
+## plot()
+plot(values, absolutes)
+## abs()
+a <- c(1, 3, NA, 7, 9)
+# 8.??•ç?†éºæ¼å€?(NA)
+sum(a)
+## ?
+help(sum)
+## help
+sum(a, na.rm = TRUE)
+## na.rm=TRUE

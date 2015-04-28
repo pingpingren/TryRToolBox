@@ -1,0 +1,56 @@
+# R??„ä?‰ç¨®?Ÿº?œ¬?‰©ä»?(ç©æœ¨)
+matrix(0, 3, 4)
+# ?•¸?€?(values)
+
+x1 <- 1
+x2 <- 2
+x3 <- 3
+y1 <- 4
+y2 <- 5
+y3 <- 6
+z1 <- 7
+z2 <- 8
+z3 <- 9
+# ??‘é??(vector)
+x <- c(x1, x2, x3)
+y <- c(y1, y2, y3)
+z <- c(z1, z2, z3)
+
+x1 == x[1]
+y[2] == y2
+z3 == z[3]
+# ?Ÿ©?™£(matrix)
+M <- rbind(x, rbind(y,z))
+
+M[1,] == x
+M[2,3] == y3
+M[3,1] == z[1]
+
+a <- 1:12
+print(a)
+matrix(a, 3, 4)
+plank <- 1:8
+dim(plank) <- c(2, 4)
+print(plank)
+matrix(1, 5, 5)
+print(plank)
+plank[2, 3]
+plank[1, 4]
+plank[1, 4] <- 0
+plank[2,]
+plank[, 4]
+plank[, 2:4]
+elevation <- matrix(1, 10, 10)
+elevation[4, 6] <- 0
+contour(elevation)
+persp(elevation)
+# ?”»?•¥??‹å??
+persp(elevation, expand=0.2)
+## 1.?”¢??Ÿmatrix?‰©ä»?
+contour(volcano)
+## 2.æª¢ç´¢matrix?…§å®?
+persp(volcano, expand=0.2)
+## 3. matrix??„è?–è¦º???
+image(volcano)
+## è¦–è¦º??–ç”¢??Ÿç?„å?–æ?”å?˜æ–¼??ç‚º"img"??„è?‡æ?™å¤¾ï¼Œå?Œæ­¥?‡³github
+

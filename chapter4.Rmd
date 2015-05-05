@@ -1,0 +1,19 @@
+## Chpater 4 摘要統計(Summary Statistics)
+這行是一般文字，以下三行是程式碼  
+  
+```
+mean(1:10)
+```
+  
+顯示程式碼執行結果：```r mean(1:10)```
+
+畫圖展示：
+```{r} 
+plot(1:10)
+```
+
+### 平均數(Mean)
+
+### 中位數(Median)
+
+### 標準差(Standard Deviation)

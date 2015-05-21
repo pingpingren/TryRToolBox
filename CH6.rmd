@@ -1,0 +1,94 @@
+---
+title: "CH6"
+author: "ping"
+date: "Thursday, May 21, 2015"
+output: html_document
+---
+
+
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+###CH6 Data Frames 
+Our vectors with treasure chest data are perfect candidates for conversion to a data frame. And it's easy to do. Call the data.frame function, and pass weights, prices, and types as the arguments. Assign the result to the treasure variable:
+
+```{r}
+weights<-c(300,200,100,250,150)
+prices<-c(9500,5000,12000,7500,18000)
+types<-c("gold","silver","gems","gold","gems")
+treasure <- data.frame(weights, prices, types)
+```
+Now, try printing treasure to see its contents:
+```{r}
+print(treasure)
+
+```
+###Data Frame Access
+Just like matrices, it's easy to access individual portions of a data frame.
+
+You can get individual columns by providing their index number in double-brackets. Try getting the second column (prices) of treasure:
+```{r}
+treasure[[2]]
+```
+You could instead provide a column name as a string in double-brackets. (This is often more readable.) Retrieve the "weights" column:
+```{r}
+treasure[["weights"]]
+
+```
+Typing all those brackets can get tedious, so there's also a shorthand notation: the data frame name, a dollar sign, and the column name (without quotes). Try using it to get the "prices" column:
+```{r}
+treasure$prices
+```
+Now try getting the "types" column:
+```{r}
+treasure[["types"]]
+```
+
+#Loading Data Frames 
+Typing in all your data by hand only works up to a point, obviously, which is why R was given the capability to easily load data in from external files.
+
+We've created a couple data files for you to experiment with:
+```{r}
+list.files()
+
+```
+You can load a CSV file's content into a data frame by passing the file name to the read.csv function. Try it with the "targets.csv" file:
+```{r}
+ read.csv("targets.csv")
+```
+
+You can load a CSV file's content into a data frame by passing the file name to the read.csv function. Try it with the "targets.csv" file:
+```{r}
+read.csv("targets.csv")
+```
+Notice the "V1" and "V2" column headers? The first line is not automatically treated as column headers with read.table. This behavior is controlled by the header argument. Call read.table again, setting header to TRUE:
+```{r}
+read.table("targets.csv", sep="\t")
+```
+Notice the "V1" and "V2" column headers? The first line is not automatically treated as column headers with read.table. This behavior is controlled by the header argument. Call read.table again, setting header to TRUE:
+```{r}
+read.table("targets.csv", sep="\t", header=TRUE)
+        
+```
+
+###Merging Data Frames
+The merge function takes arguments with an x frame (targets) and a y frame (infantry). By default, it joins the frames on columns with the same name (the two Port columns). See if you can merge the two frames:
+```{r}
+targets <- read.csv("targets.csv")
+infantry <- read.table("targets.csv", sep="\t", header=TRUE)
+merge(x = targets, y = infantry)
+
+
+```
+
+

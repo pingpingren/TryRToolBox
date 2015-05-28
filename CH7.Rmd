@@ -20,3 +20,55 @@ plot(cars)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+#####Real-World Data
+###Some Real World Data 
+We'll load that into the piracy data frame for you:
+```{r}
+piracy <- read.csv("piracy.csv")
+gdp <- read.table("gdp.txt", sep="\t", header=TRUE)
+
+```
+We'll merge the frames on the country names:
+```{r}
+countries <- merge(x = gdp, y = piracy)
+plot(countries$GDP, countries$Piracy)
+cor.test(countries$GDP, countries$Piracy)
+line <- lm(countries$Piracy ~ countries$GDP)
+abline(line)
+```
+Let's do a plot of GDP versus piracy. Call the plot function, using the "GDP" column of countries for the horizontal axis, and the "Piracy" column for the vertical axis:
+It looks like there's a negative correlation between wealth and piracy - generally, the higher a nation's GDP, the lower the percentage of software installed that's pirated. But do we have enough data to support this connection? Is there really a connection at all?
+
+###ggplot2 
+The functionality we've shown you so far is all included with R by default. (And it's pretty powerful, isn't it?) But in case the default installation doesn't include that function you need, there are still more libraries available on the servers of the Comprehensive R Archive Network, or CRAN. They can add anything from new statistical functions to better graphics capabilities. Better yet, installing any of them is just a command away.
+
+Let's install the popular ggplot2 graphics package. Call the install.packages function with the package name in a string:
+
+
+
+R can test for correlation between two vectors with the cor.test function. Try calling it on the GDP and Piracy columns of the countries data frame:
+
+```{r,eval=FALSE}
+install.packages("ggplot2")
+```
+
+You can get help for a package by calling the help function and passing the package name in the package argument. Try displaying help for the "ggplot2" package:
+```{r}
+help(package = "ggplot2")
+```
+Here's a quick demo of the power you've just added to R. To use it, let's revisit some data from a previous chapter.
+```{r}
+library(ggplot2)
+weights <- c(300, 200, 100, 250, 150)
+prices <- c(9000, 5000, 12000, 7500, 18000)
+chests <- c('gold', 'silver', 'gems', 'gold', 'gems')
+types <- factor(chests)
+qplot(weights, prices, color = types)
+```
+The qplot function is a commonly-used part of ggplot2. We'll pass the weights and values of our cargo to it, using the chest types vector for the color argument:
+
+Not bad! An attractive grid background and colorful legend, without any of the configuration hassle from before!
+
+ggplot2 is just the first of many powerful packages awaiting discovery on CRAN. And of course, there's much, much more functionality in the standard R libraries. This course has only scratched the surface!
+
+
